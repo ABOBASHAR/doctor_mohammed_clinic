@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
-import 'Screens/home.dart';
+import 'package:flutter_application_5/homescreen.dart';
+import 'package:flutter_application_5/onboardingscreen.dart';
+import 'package:flutter_application_5/splashscreen.dart';
+
 void main() {
-  runApp(const MainScreen());
+  runApp(MyApp());
 }
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
-
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Doctor Mohammed Clinic",
-      home: Home(),
+      title: 'Doctune',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        fontFamily: 'Poppins',
+      ),
+      
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/onboarding': (context) => OnboardingScreen(),
+        '/home': (context) => Homescreen(),
+      },
+      
     );
   }
 }
