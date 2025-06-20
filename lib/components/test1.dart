@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+
+class Test1 extends StatelessWidget {
+  const Test1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 80,
+        backgroundColor: Colors.amber,
+      ),
+      body: ListView(
+        children: [
+          Text("Hamz hamooz🤣"),
+        ],
+      ),
+    );
+  }
+}
